@@ -1,0 +1,291 @@
+:root {         /* Selector*/
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --grisClaro: #dfe9f3;
+}
+
+/* Utilizar Firefox Developer para grid mas recomendble */
+/* Utilizar Firefox Developer para grid mas recomendble */
+/* Utilizar Firefox Developer para grid mas recomendble */
+/* Utilizar Firefox Developer para grid mas recomendble */
+
+/* Globales */
+html {
+    font-size: 62.5%;           /* Hack para reiniciar el tamaño parte*/      /* 1*/
+    box-sizing: border-box;     /* Hack para Box Model*/
+    /*scroll-snap-type: y mandatory;      scroll "y" arriba y abajo "x" der y izq */
+}
+
+/* Scroll snap 
+.servicios, 
+.navegacion-principal,
+.formulario {         /* Scroll  
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+} */
+
+*, *:before, *:after {      /* Hack para Box Model*/
+  box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;        /* 1rem = 10px */      /* 1*/
+    font-family: 'Krub', sans-serif;        /* Fuente de la letra*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);         /* Color de fondo "degradado"*/
+}
+
+.contenedor {
+    max-width: 120rem;      /* Ancho*/
+    /*
+    margin-top: 0;          Separacion hacia arriba
+    margin-right: auto;     Separacion hacia la derecha
+    margin-bottom: 0rem;    Separacion hacia abajo
+    margin-left: auto;      Separacion hacia la izquierda
+    */
+    margin: 0 auto;         /* Separacion*/
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;             /* Relleno por dentro*/
+    margin-top: 3rem;               /* Separacion entre elementos*/
+    font-size: 2rem;                /* Tamaño de letra*/
+    text-decoration: none;          /* Quitar linea de abajo*/
+    text-transform: uppercase;      /* Cambiar texto a mayusculas*/
+    font-weight: bold;              /* Texto en negritas*/
+    border-radius: .5rem;           /* Esquina redondeada*/
+    width: 90%;                     /* Alargar el boton*/
+    text-align: center;             /* Texto centrado*/
+    border: none;       /* Quitar el borde en el boton enviar (servicios) */
+}
+/* .boton*/
+@media (min-width: 768px) {
+    .boton {
+        width: auto;        /* Resetear*/
+    }
+}
+.boton:hover {              /* Boton de enviar (servicios) */
+    cursor: pointer;        /* Para  indicar el cursor*/
+}
+
+.sombra {       /* https://www.cssmatic.com/box-shadow */
+    box-shadow: 10px 10px 5px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco); 
+    padding: 2rem;
+    border-radius: 1rem;        /* Esquinas redondeadas*/
+}
+
+/* Tipografia */
+h1 {
+    font-size: 3.8rem;      /* Tamaño de letra*/
+}
+h2 {
+    font-size: 2.8rem;      /* Tamaño de letra*/
+}
+h3 {
+    font-size: 1.8rem;      /* Tamaño de letra*/
+}
+
+h1, h2, h3 {
+    text-align: center;     /* Texto centrado*/
+}
+/* Titulos */
+.titulo span {
+    font-size: 2rem;        /* Tamaño de letra*/
+}
+
+/* Utilidades */
+.w-100 {       /* width 100% (servicios input enviar) */
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .w-100 {
+        width: auto;
+    }
+}
+.flex {         /*(servicios input enviar) */
+    display: flex;
+}
+.alinear-derecha {      /*(servicios input enviar) */
+    justify-content: flex-end;
+}
+
+/* Navegacion Principal */
+.nav-bg {
+    background-color: var(--secundario);        /* Color de fondo*/
+}
+
+.navegacion-principal {
+    display: flex;      /* flex      distribuir tus elementos en una dirección 
+                        fila (row) o columna (column)*/
+    flex-direction: column;         /* Column   Acomodo de arriba hacia abajo*/
+}
+/* .navegacion-principal*/
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;        /* row     Acomodo por fila de Izq a Der*/
+        justify-content: space-between;         /* flex habilita y sirve para ajustar horizontalmente*/
+    }
+}
+
+.navegacion-principal a {       /* Enlaces*/
+    display: block;         /* block se coloca uno debajo del otro
+                            inline se coloca hacia la derecha*/
+    text-align: center;
+    color: var(--blanco);       /* Color de texto*/
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {         /* :hover   Cuando el usuario se coloca en el*/
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/* Hero */
+.hero{
+    background-image: url(../img/hero.jpg);         /* Seleccionar imagen*/
+    background-repeat: no-repeat;       /* No repetir imagen*/
+    background-size: cover;         /* tamaño    cover    todo el ancho disponible*/
+    height: 450px;      /* Tamaño*/
+    position: relative;         /* "SOMBRA" El padre siempre tiene que tener posicion relativa */
+    margin-bottom: 2rem;        /* Separacion abajo*/
+}
+
+.contenido-hero {
+    position: absolute;         /* "SOMBRA" Hijo posicion absoluta */
+    background-color: rgba(0, 0, 0, .7);        /* Anterior*/
+    background-color: rgb(0 0 0 / 70%);         /* Color de sombra*/
+    width: 100%;        /* Espacio disponible*/
+    height: 100%;       /* Espacio disponible*/
+
+    /* acomodar verticalmente */
+    display: flex;              /* Acomodo de Izq a Der*/
+    flex-direction: column;     /* Acomodo de arriba hacia abajo*/
+    align-items: center;        /* items      Acomodo en propiedad de columna*/
+    justify-content: center;    /* aliniar verticalmente*/
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion {
+    display: flex;              /* Alinear Verticalmente*/
+    align-items: flex-end;      /* Alinear hacia abajo verticalmente*/
+}
+
+/* Servicios*/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;      /* Grid te permite definir la ubicación y tamaño de los elementos */
+        grid-template-columns: repeat(3, 1fr);      /* repite el numero de columnas "3 columnas y fraccion del 100%"*/
+        /*  grid-template-columns: 33.3% 33.3% 33.3%;       Numero de columnas, fr fraccion entre el 100%*/
+        /*  grid-template-columns: 1fr 1fr 1fr;             Numero de columnas, fr fraccion entre el 100%*/ 
+        column-gap: 1rem;       /* Separacion entre columnas grid */
+
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal; /* Grueso de la letra */
+}
+
+.servicio p {
+    line-height: 2; /* Interlineado " Alrededor" */
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;      /* Altura */
+    width: 15rem;       /* Ancho */
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;      /* Uno frente al otro */
+    justify-content: space-evenly;        /* Centrar */
+    align-items: center;        /* Alinear vertical y horizontal */
+
+}
+
+/* Contacto */
+
+.formulario {       /* Cuadro del formulario*/
+    background-color: var(--gris);
+    width: min( 60rem, 100%); /* Utilizar el valor mas pequeño */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {        /* Eleminar el borde "LINEA" */
+    border: none;
+}
+
+.formulario legend {        /* Texto del interior del cuadro*/
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+/* Campos */
+@media (min-width: 768px) {     /* Ordenar nombre y telefono */
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 50% 50%;     /* Columna */
+        grid-template-rows: auto auto 20rem;           /* fila */
+        column-gap: 1rem;       /* Separacion de columnas */
+    }
+}
+
+.campo:nth-child(3), 
+.campo:nth-child(4) {    /* nth-child() Cuando tienes mas de una clase repetidos
+                        se utiliza este codigo y la funcion es dentro de parentesis
+                        poner el numero la posicion de la clase y empieza desde el 1 */
+    grid-column: 1 / 3;      /* Seleccionar elemento y posicionar (las lineas se ven en Firefox Developer)*/
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label {          /* texto del campo */
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+/* .campo input [type="text"] */
+.input-text {          /* Dentro de los campos */
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+}
